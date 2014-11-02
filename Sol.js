@@ -10,17 +10,17 @@ var _ = require('lodash');
 /**
  * Internal Modules
  */
-var Controllers = require('./lib/Controllers');
-var Models = require('./lib/Models');
-var Config = require('./lib/Config');
-var Http = require('./lib/Http');
-var Paths = require('./lib/Paths');
+var Controllers = require(__dirname + '/lib/Controllers');
+var Models = require(__dirname + '/lib/Models');
+var Config = require(__dirname + '/lib/Config');
+var Http = require(__dirname + '/lib/Http');
+var Paths = require(__dirname + '/lib/Paths');
 
 /**
  * Sol Contstructor
  */
 function Sol() {
-  this.appPath = __dirname;
+  this.appPath = process.cwd();
 }
 
 /**
