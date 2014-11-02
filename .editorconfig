@@ -1,0 +1,19 @@
+# EditorConfig is awesome: http://EditorConfig.org
+
+# top-most EditorConfig file
+root = true
+
+# All
+[*]
+end_of_line = lf
+insert_final_newline = true
+
+# JS
+[*.js]
+indent_style = space
+indent_size = 2
+
+# SCSS
+[*.scss]
+indent_style = space
+indent_size = 2

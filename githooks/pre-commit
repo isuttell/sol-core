@@ -1,0 +1,4 @@
+#/usr/bin/env bash
+# git hook to run tests before each commit
+
+npm test

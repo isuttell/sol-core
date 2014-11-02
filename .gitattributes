@@ -1,0 +1,12 @@
+# used to remove files from deployment using `git archive`
+# git files
+.gitattributes export-ignore
+.gitignore export-ignore
+
+# We don't need to archive tests
+test export-ignore
+
+
+# If we're not a repo it doesn't make sense to include githooks
+githooks export-ignore
+bin export-ignore

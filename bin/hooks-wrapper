@@ -1,0 +1,7 @@
+#!/bin/bash
+if [ -x $0.local ]; then
+    $0.local "$@" || exit $?
+fi
+if [ -x githooks/$(basename $0) ]; then
+    githooks/$(basename $0) "$@" || exit $?
+fi
