@@ -21,10 +21,10 @@
     "waterline": "^0.10.12"
   },
   "devDependencies": {
-    "grunt-jasmine-node": "^0.2.1",
     "grunt-cli": "^0.1.13",
     "grunt-contrib-jshint": "^0.10.0",
     "grunt-contrib-watch": "~0.5.3",
+    "grunt-jasmine-node-coverage": "git://github.com/isuttell/grunt-jasmine-node-coverage",
     "grunt-jscs": "^0.8.1",
     "include-all": "~0.1.3"
   },

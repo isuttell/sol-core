@@ -16,7 +16,7 @@ module.exports = function(grunt) {
     sol: {
 
       // App files to watch:
-      files: ['lib/**/*', "Sol.js", "test/**/*.js"],
+      files: ['lib/**/*', "Sol.js", "test/specs/**/*.js", "test/helpers/**/*.js", "test/mock/**/*.js"],
 
       // When app changes run tests
       tasks: ['jshint:sol', 'jscs:sol', 'jasmine_node:sol'],

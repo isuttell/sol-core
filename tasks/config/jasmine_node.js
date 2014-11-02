@@ -13,6 +13,10 @@
 module.exports = function(grunt) {
 
   grunt.config.set('jasmine_node', {
+    coverage: {
+      savePath: './test/coverage'
+    },
+    useHelpers: true,
     options: {
       forceExit: true,
       match: '.',
@@ -21,6 +25,7 @@ module.exports = function(grunt) {
       specNameMatcher: 'Spec',
       useHelpers: true,
       helperNameMatcher: 'Helpers',
+      captureExceptions: true,
       jUnit: {
         report: true,
         savePath: "./test/reports/",
@@ -31,5 +36,5 @@ module.exports = function(grunt) {
     sol: ['./test/']
   });
 
-  grunt.loadNpmTasks('grunt-jasmine-node');
+  grunt.loadNpmTasks('grunt-jasmine-node-coverage');
 };
