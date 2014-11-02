@@ -19,6 +19,7 @@ module.exports = function(grunt) {
       matchall: false,
       extensions: 'js',
       specNameMatcher: 'Spec',
+      useHelpers: true,
       helperNameMatcher: 'Helpers',
       jUnit: {
         report: true,
@@ -27,7 +28,7 @@ module.exports = function(grunt) {
         consolidate: true
       }
     },
-    sol: ['./test/specs/']
+    sol: ['./test/']
   });
 
   grunt.loadNpmTasks('grunt-jasmine-node');

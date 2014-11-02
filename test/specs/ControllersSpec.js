@@ -28,17 +28,9 @@ describe('Controllers', function() {
   });
 
   it('should return only read files that end with \'Controller.js\'', function() {
-    var controllers = new Controllers(mockSol),
-      controllersLength = 0;
+    var controllers = new Controllers(mockSol);
 
-
-    // Count them up
-    for (var controller in controllers) {
-      if (typeof controllers[controller] === 'function') {
-        controllersLength++;
-      }
-    }
-    expect(controllersLength).toBe(1);
+    expect(controllers.size()).toBe(1);
 
   });
 });

@@ -20,15 +20,27 @@ var Paths = require(__dirname + '/lib/Paths');
  * Sol Contstructor
  */
 function Sol() {
+  /**
+   * Save the current working directory so we always know where we are
+   *
+   * @type {String}
+   */
   this.appPath = process.cwd();
 }
 
 /**
  * Load any configuration
  *
- * @param  {Object} overrideConfig optional configuration overide
+ * @param  {Object} override (optional) configuration overide
  */
-Sol.prototype.run = function(overrideConfig) {
+Sol.prototype.setup = function(override) {
+  /**
+   * Optional override for testing
+   */
+  if (typeof override === 'undefined') {
+    override = {};
+  }
+
   /**
    * Interal reference for semantics
    *
@@ -40,14 +52,7 @@ Sol.prototype.run = function(overrideConfig) {
    * Load Application Absolute Paths
    * @type {Paths}
    */
-  sol.paths = new Paths(sol);
-
-  /**
-   * Optional override for testing
-   */
-  if (typeof overrideConfig === 'undefined') {
-    overrideConfig = {};
-  }
+  sol.paths = override.paths || new Paths(sol);
 
   /**
    * Extra Config from config directory
@@ -55,7 +60,7 @@ Sol.prototype.run = function(overrideConfig) {
    * @type    {Object}
    */
   sol.config = _.extend(
-    overrideConfig,
+    override.config || {},
     Config.load(sol)
   );
 
@@ -64,20 +69,37 @@ Sol.prototype.run = function(overrideConfig) {
    *
    * @type    {Object}
    */
-  sol.controllers = new Controllers(sol);
+  sol.controllers = override.controllers || new Controllers(sol);
 
   /**
    * Load models directory
    *
    * @type    {Object}
    */
-  sol.models = new Models(sol);
+  sol.models = override.controllers || new Models(sol);
+
+  /**
+   * Return this for chaining
+   */
+  return this;
+};
+
+/**
+ * Start listening
+ *
+ * @param     {Sol}    sol    sol instance
+ */
+Sol.prototype.listen = function(sol) {
+  /**
+   * Takes a sol instance or uses this for chaining
+   * @type {Sol}
+   */
+  sol = sol || this;
 
   /**
    * Start Express
    */
   Http.listen(sol);
-
 };
 
 /**
