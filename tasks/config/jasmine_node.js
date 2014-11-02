@@ -14,7 +14,8 @@ module.exports = function(grunt) {
 
   grunt.config.set('jasmine_node', {
     coverage: {
-      savePath: './test/coverage'
+      savePath: './test/coverage',
+      excludes: ['test/**/*.js']
     },
     useHelpers: true,
     options: {
