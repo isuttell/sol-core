@@ -1,0 +1,7 @@
+test/
+tasks/
+bin/
+githooks/
+.jscsrc
+.jshintrc
+.travis.yml
