@@ -35,14 +35,9 @@ function Sol() {
  */
 Sol.prototype.setup = function(override) {
   /**
-   * Optional override for testing
-   */
-  if (typeof override === 'undefined') {
-    override = {};
-  }
-
-  /**
-   * Interal reference for semantics
+   * If sol is given then we override exisiting options
+   * otherwise we reference this. This is used mostly
+   * for testing
    *
    * @type    {this}
    */
@@ -76,7 +71,7 @@ Sol.prototype.setup = function(override) {
    *
    * @type    {Object}
    */
-  sol.models = override.controllers || new Models(sol);
+  sol.models = override.models || new Models(sol);
 
   /**
    * Return this for chaining
