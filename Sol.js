@@ -66,7 +66,7 @@ Sol.prototype.setup = function(override) {
    */
   sol.config = _.defaults(
     override.config || {},
-    Config.load(sol)
+    Config.load(sol, process.env.NODE_ENV)
   );
 
   /**
