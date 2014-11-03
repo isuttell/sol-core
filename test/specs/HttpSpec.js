@@ -47,7 +47,15 @@ describe('Http', function() {
     mockSol.config.http = {
       middleware: {
         order: [
+          'cookieParser',
           'session',
+          'json',
+          'compress',
+          'logger',
+          'router',
+          'static',
+          '404',
+          '500',
           'fakeMiddleware'
         ]
       }
