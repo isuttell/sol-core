@@ -4,8 +4,10 @@ describe('Controllers', function() {
   var Controllers = require('../../lib/Controllers'),
     mockControllerDir = './test/mock/controllers';
 
+  var mockSol;
 
   beforeEach(function() {
+    mockSol = new SolHelper();
     // Reset
     mockSol.paths = {
         controllers: mockControllerDir

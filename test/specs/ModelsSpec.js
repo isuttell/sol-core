@@ -4,8 +4,10 @@ describe('Models', function() {
   var Models = require('../../lib/Models'),
     mockModelDir = './test/mock/models',
     models;
+  var mockSol;
 
   beforeEach(function() {
+    mockSol = new SolHelper();
     // Reset
     mockSol.paths = {
         models: mockModelDir

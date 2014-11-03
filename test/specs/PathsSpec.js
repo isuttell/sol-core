@@ -3,8 +3,10 @@
 describe('Paths', function ()
 {
     var Paths = require('../../lib/Paths');
+    var mockSol;
 
     beforeEach(function(){
+        mockSol = new SolHelper();
         mockSol.appPath = __dirname;
     });
 

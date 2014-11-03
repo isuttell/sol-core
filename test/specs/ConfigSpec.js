@@ -4,9 +4,12 @@ describe('Config', function ()
 {
     var Config = require('../../lib/Config'),
         mockConfigDir = './test/mock/config',
-        configs;
+        configs,
+        mockSol;
 
     beforeEach(function() {
+      mockSol = new SolHelper();
+
       // Reset
       mockSol.paths = {
           config: mockConfigDir

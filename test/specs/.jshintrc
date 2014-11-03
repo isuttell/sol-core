@@ -16,6 +16,6 @@
     "beforeEach" : false,
     "expect"     : false,
     "it"         : false,
-    "mockSol"    : false
+    "SolHelper"  : false
   }
 }

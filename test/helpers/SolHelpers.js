@@ -6,7 +6,7 @@
  *
  * @return {Function}
  */
-function mockSol() {
+function SolHelper() {
     this.log = {};
     this.log.silly = function(){};
     this.log.debug = function(){};
@@ -14,6 +14,8 @@ function mockSol() {
     this.log.info = function(){};
     this.log.warn = function(){};
     this.log.error = function(){};
+
+    this.config = {};
 }
 
-global.mockSol = new mockSol();
+global.SolHelper = SolHelper;

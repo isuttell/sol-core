@@ -110,7 +110,8 @@ Sol.prototype.listen = function(sol) {
   /**
    * Start Express
    */
-  Http.listen(sol);
+  var express = require('express');
+  Http.listen(sol, express);
 };
 
 /**

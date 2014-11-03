@@ -4,9 +4,12 @@ describe('Router', function() {
   var Router = require('../../lib/Router');
 
   var mockRoutes,
-    mockControllers;
+    mockControllers,
+    mockSol;
 
   beforeEach(function() {
+    mockSol = new SolHelper();
+
     mockRoutes = {
       'GET /': 'IndexController.index',
       'GET /projects': 'IndexController.projects',
