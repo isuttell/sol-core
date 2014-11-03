@@ -1,7 +1,7 @@
 # Sol.js Core
-Node.js backend framework
 
 [![Build Status](https://travis-ci.org/isuttell/sol-core.svg)](https://travis-ci.org/isuttell/sol-core)
+[![Coverage Status](https://img.shields.io/coveralls/isuttell/sol-core.svg)](https://coveralls.io/r/isuttell/sol-core)
 
 - - -
 
