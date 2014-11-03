@@ -6,9 +6,7 @@ Node.js backend framework
 - - -
 
 ## Description
-An experimental frame with the goal to be quick and lean to setup simple node.js
-based websites. This is only one piece of the framework. The other peice resides
-in [Sol.js](https://github.com/isuttell/sol).
+An experiment to create a framework that is quick to setup, and easy to test. The project is spit into two parts. The other repo can be found at [https://github.com/isuttell/sol](https://github.com/isuttell/sol).
 
 ## Documentation
 
