@@ -15,6 +15,7 @@
     "require"    : false,
     "beforeEach" : false,
     "expect"     : false,
-    "it"         : false
+    "it"         : false,
+    "mockSol"    : false
   }
 }

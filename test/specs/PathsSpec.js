@@ -2,13 +2,10 @@
 
 describe('Paths', function ()
 {
-    var Paths = require('../../lib/Paths'),
-        mockSol;
+    var Paths = require('../../lib/Paths');
 
     beforeEach(function(){
-        mockSol = {
-            appPath: __dirname
-        };
+        mockSol.appPath = __dirname;
     });
 
     it('should be a function', function ()

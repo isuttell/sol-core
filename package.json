@@ -18,7 +18,8 @@
     "morgan": "^1.4.1",
     "sails-disk": "^0.10.4",
     "sails-mongo": "^0.10.4",
-    "waterline": "^0.10.12"
+    "waterline": "^0.10.12",
+    "winston": "^0.8.1"
   },
   "devDependencies": {
     "grunt-cli": "^0.1.13",

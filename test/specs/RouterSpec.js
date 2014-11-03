@@ -4,8 +4,7 @@ describe('Router', function() {
   var Router = require('../../lib/Router');
 
   var mockRoutes,
-    mockControllers,
-    mockSol;
+    mockControllers;
 
   beforeEach(function() {
     mockRoutes = {
@@ -32,13 +31,11 @@ describe('Router', function() {
       }
     };
 
-    mockSol = {
-      config: {
-        routes: mockRoutes
-      },
-      controllers: mockControllers
+    mockSol.config = {
+      routes: mockRoutes
     };
 
+    mockSol.controllers = mockControllers;
 
   });
 
@@ -106,7 +103,7 @@ describe('Router', function() {
     it('should return isValid as false if the controller does not doesnotexist', function() {
       var routeName = 'BAD /doesnotexist',
         route = new Router.Route(mockSol, routeName, mockRoutes[routeName]);
-        console.log(route);
+
       expect(route.isValid).toBe(false);
     });
 

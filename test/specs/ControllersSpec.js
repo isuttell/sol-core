@@ -2,15 +2,13 @@
 
 describe('Controllers', function() {
   var Controllers = require('../../lib/Controllers'),
-    mockControllerDir = './test/mock/controllers',
-    mockSol;
+    mockControllerDir = './test/mock/controllers';
+
 
   beforeEach(function() {
     // Reset
-    mockSol = {
-      paths: {
+    mockSol.paths = {
         controllers: mockControllerDir
-      }
     };
   });
 

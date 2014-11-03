@@ -4,15 +4,12 @@ describe('Config', function ()
 {
     var Config = require('../../lib/Config'),
         mockConfigDir = './test/mock/config',
-        mockSol,
         configs;
 
     beforeEach(function() {
       // Reset
-      mockSol = {
-        paths: {
+      mockSol.paths = {
           config: mockConfigDir
-        }
       };
       configs = Config.load(mockSol);
     });
@@ -33,7 +30,7 @@ describe('Config', function ()
         });
 
         it('should return only read files that end with \'.js\'', function(){
-            expect(configs.size()).toBe(6);
+            expect(configs.size()).toBe(7);
         });
     });
 });

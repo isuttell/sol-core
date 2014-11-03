@@ -15,6 +15,7 @@ var Models = require(__dirname + '/lib/Models');
 var Config = require(__dirname + '/lib/Config');
 var Http = require(__dirname + '/lib/Http');
 var Paths = require(__dirname + '/lib/Paths');
+var Log = require(__dirname + '/lib/Log');
 
 /**
  * Sol Contstructor
@@ -63,10 +64,16 @@ Sol.prototype.setup = function(override) {
    *
    * @type    {Object}
    */
-  sol.config = _.extend(
+  sol.config = _.defaults(
     override.config || {},
     Config.load(sol)
   );
+
+  /**
+   * Setup Logger
+   * @type {Log}
+   */
+  sol.log = new Log(sol);
 
   /**
    * Load controllers directory

@@ -31,7 +31,6 @@ describe('Sol', function() {
     expect(typeof Sol.listen).toBe('function');
   });
 
-
   describe('controllers', function() {
     it('should be an object of controllers', function() {
         expect(typeof Sol.controllers).toBe('object');

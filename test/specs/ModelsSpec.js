@@ -3,15 +3,12 @@
 describe('Models', function() {
   var Models = require('../../lib/Models'),
     mockModelDir = './test/mock/models',
-    mockSol,
     models;
 
   beforeEach(function() {
     // Reset
-    mockSol = {
-      paths: {
+    mockSol.paths = {
         models: mockModelDir
-      }
     };
     models = new Models(mockSol);
   });
