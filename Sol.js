@@ -44,6 +44,15 @@ Sol.prototype.setup = function(override) {
   var sol = this;
 
   /**
+   * Define an empty object if it's not supplied
+   *
+   * @type {Object}
+   */
+  if (typeof override === 'undefined') {
+    override = {};
+  }
+
+  /**
    * Load Application Absolute Paths
    * @type {Paths}
    */

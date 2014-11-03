@@ -33,7 +33,6 @@ describe('Sol', function() {
 
 
   describe('controllers', function() {
-    console.log(Sol);
     it('should be an object of controllers', function() {
         expect(typeof Sol.controllers).toBe('object');
         expect(Sol.controllers.size()).toBe(1);

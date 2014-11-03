@@ -12,7 +12,11 @@ describe('Router', function() {
       'GET /': 'IndexController.index',
       'GET /projects': 'IndexController.projects',
       'ANY /status': 'IndexController.index',
-      'PUT /status': 'IndexController.put'
+      'PUT /status': 'IndexController.put',
+
+      'BAD/route': 'IndexController.index',
+      'BAD /controller': 'FakeControllerindex',
+      'BAD /doesnotexist': 'FakeController.index'
     };
 
     mockControllers = {
@@ -84,5 +88,27 @@ describe('Router', function() {
 
       expect(route.isValid).toBe(false);
     });
+
+    it('should return isValid as false if the path name is bad', function() {
+      var routeName = 'BAD/route',
+        route = new Router.Route(mockSol, routeName, mockRoutes[routeName]);
+
+      expect(route.isValid).toBe(false);
+    });
+
+    it('should return isValid if the controller synatx is wrong', function() {
+      var routeName = 'BAD /controller',
+        route = new Router.Route(mockSol, routeName, mockRoutes[routeName]);
+
+      expect(route.isValid).toBe(false);
+    });
+
+    it('should return isValid as false if the controller does not doesnotexist', function() {
+      var routeName = 'BAD /doesnotexist',
+        route = new Router.Route(mockSol, routeName, mockRoutes[routeName]);
+        console.log(route);
+      expect(route.isValid).toBe(false);
+    });
+
   });
 });
