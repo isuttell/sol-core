@@ -54,6 +54,14 @@ Sol.prototype.setup = function(override) {
   }
 
   /**
+   * Pull the enviroment from the process and save it to the instance
+   * so we can access it throughout the pap
+   *
+   * @type    {String}
+   */
+  sol.env = override.env || process.env.NODE_ENV || 'production';
+
+  /**
    * Load Application Absolute Paths
    * @type {Paths}
    */
@@ -66,7 +74,7 @@ Sol.prototype.setup = function(override) {
    */
   sol.config = _.defaults(
     override.config || {},
-    Config.load(sol, process.env.NODE_ENV)
+    Config.load(sol, sol.env)
   );
 
   /**
