@@ -4,6 +4,7 @@
 [![Coverage Status](https://img.shields.io/coveralls/isuttell/sol-core.svg)](https://coveralls.io/r/isuttell/sol-core)
 [![Dependency Status](https://david-dm.org/isuttell/sol-core.svg)](https://david-dm.org/isuttell/sol-core)
 [![devDependency Status](https://david-dm.org/isuttell/sol-core/dev-status.svg)](https://david-dm.org/isuttell/sol-core#info=devDependencies)
+[![GitHub version](https://badge.fury.io/gh/isuttell%2Fsol-core.svg)](http://badge.fury.io/gh/isuttell%2Fsol-core)
 
 - - -
 
