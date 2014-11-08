@@ -5,7 +5,7 @@
 [![Dependency Status](https://david-dm.org/isuttell/sol-core.svg)](https://david-dm.org/isuttell/sol-core)
 [![devDependency Status](https://david-dm.org/isuttell/sol-core/dev-status.svg)](https://david-dm.org/isuttell/sol-core#info=devDependencies)
 [![GitHub version](https://badge.fury.io/gh/isuttell%2Fsol-core.svg)](http://badge.fury.io/gh/isuttell%2Fsol-core)
-[![Codacy Badge](https://www.codacy.com/project/badge/f9732165a2c84612a0ba0ca3b9bd1a06)](https://www.codacy.com)
+[![Codacy Badge](https://www.codacy.com/project/badge/f9732165a2c84612a0ba0ca3b9bd1a06)](https://www.codacy.com/public/isuttell/solcore)
 
 - - -
 
