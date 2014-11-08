@@ -32,6 +32,9 @@ function Sol() {
 /**
  * Load any configuration
  *
+ * TODO
+ *  - Decrease cyclomatic complexity
+ *
  * @param  {Object} override (optional) configuration overide
  */
 Sol.prototype.setup = function(override) {
