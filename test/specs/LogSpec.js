@@ -1,10 +1,11 @@
 describe('Log', function() {
-  var Sol, override;
+  var Sol, options;
 
   beforeEach(function() {
     Sol = require('../../Sol.js');
 
-    override = {
+    options = {
+      env: 'production',
       paths: {
         app: './test/mock/',
         config: './test/mock/config',
@@ -16,7 +17,7 @@ describe('Log', function() {
       }
     };
 
-    Sol.setup(override);
+    Sol.setup(options);
   });
 
   it('should be an object', function() {

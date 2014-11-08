@@ -17,6 +17,7 @@ describe('Sol', function() {
     };
 
     Sol.setup(override);
+    // Sol.paths = override.paths;
   });
 
   it('should return an instance of itself', function() {

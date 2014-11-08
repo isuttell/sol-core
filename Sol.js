@@ -5,7 +5,7 @@
 /**
  * Third Party Modules
  */
-var _ = require('lodash');
+// var _ = require('lodash');
 
 /**
  * Internal Modules
@@ -32,29 +32,21 @@ function Sol() {
 /**
  * Load any configuration
  *
- * TODO
- *  - Decrease cyclomatic complexity
- *
- * @param  {Object} override (optional) configuration overide
+ * @param  {Object} options (optional) configuration overide
  */
-Sol.prototype.setup = function(override) {
+Sol.prototype.setup = function(options) {
   /**
-   * If sol is given then we override exisiting options
-   * otherwise we reference this. This is used mostly
-   * for testing
+   * Internal reference to this for semantics
    *
    * @type    {this}
    */
   var sol = this;
 
   /**
-   * Define an empty object if it's not supplied
+   * Ensure options is set
    *
-   * @type {Object}
    */
-  if (typeof override === 'undefined') {
-    override = {};
-  }
+  options = options || {};
 
   /**
    * Pull the enviroment from the process and save it to the instance
@@ -62,43 +54,40 @@ Sol.prototype.setup = function(override) {
    *
    * @type    {String}
    */
-  sol.env = override.env || process.env.NODE_ENV || 'production';
+  sol.env = options.env || process.env.NODE_ENV;
 
   /**
    * Load Application Absolute Paths
    * @type {Paths}
    */
-  sol.paths = override.paths || new Paths(sol);
+  sol.paths = options.paths || new Paths(sol, options);
 
   /**
    * Extra Config from config directory
    *
    * @type    {Object}
    */
-  sol.config = _.defaults(
-    override.config || {},
-    Config.load(sol, sol.env)
-  );
+  sol.config = options.config || Config.load(sol, options);
 
   /**
    * Setup Logger
    * @type {Log}
    */
-  sol.log = new Log(sol);
+  sol.log = new Log(sol, options);
 
   /**
    * Load controllers directory
    *
    * @type    {Object}
    */
-  sol.controllers = override.controllers || new Controllers(sol);
+  sol.controllers = new Controllers(sol, options);
 
   /**
    * Load models directory
    *
    * @type    {Object}
    */
-  sol.models = override.models || new Models(sol);
+  sol.models =  new Models(sol, options);
 
   /**
    * Return this for chaining

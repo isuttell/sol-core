@@ -1,13 +1,15 @@
 {
-  "camelcase" : true,
-  "newcap"    : true,
-  "strict"    : false,
-  "trailing"  : true,
-  "browser"   : false,
-  "jquery"    : false,
-  "undef"     : true,
-  "unused"    : true,
-  "es3"       : true,
-  "quotmark"  : false,
-  "node"      : true
+  "camelcase"     : true,
+  "newcap"        : true,
+  "strict"        : false,
+  "trailing"      : true,
+  "browser"       : false,
+  "jquery"        : false,
+  "undef"         : true,
+  "unused"        : true,
+  "es3"           : true,
+  "quotmark"      : false,
+  "node"          : true,
+  "maxparams"     : 3,
+  "maxcomplexity" : 5
 }
