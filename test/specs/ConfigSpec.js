@@ -34,4 +34,18 @@ describe('Config', function ()
     it('should return only read files that end with \'.js\'', function(){
         expect(configs.size()).toBe(7);
     });
+
+    it('should ignore directories that do not exist', function(){
+        mockSol.env = 'fake';
+        var fakeConfigs = new Config(mockSol);
+        expect(fakeConfigs.app.port).toBe(3001);
+    });
+
+    it('should override settings from the env folder', function() {
+        mockSol.env = 'production';
+        configs = new Config(mockSol);
+
+        expect(configs.app.port).toBe(80);
+    });
+
 });
