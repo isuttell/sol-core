@@ -27,6 +27,10 @@ function Sol() {
    * @type {String}
    */
   this.appPath = process.cwd();
+
+  this.env = process.env.NODE_ENV;
+
+  this.port = process.env.PORT;
 }
 
 /**
