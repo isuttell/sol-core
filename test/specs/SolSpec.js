@@ -8,6 +8,7 @@ describe('Sol', function() {
       appPath: './test/mock'
     };
     Sol.setup(override);
+    // Sol.paths = override.paths;
   });
 
   it('should return an instance of itself', function() {
