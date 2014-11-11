@@ -2,7 +2,7 @@
 
 describe('utility', function() {
   var utilities = require('../../lib/utilities'),
-    mockControllerDir = './test/mock/controllers';
+    mockControllerDir = './test/mock/api/controllers';
 
   describe('loadModules', function() {
     it('should be a function', function() {

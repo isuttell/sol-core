@@ -5,17 +5,8 @@ describe('Sol', function() {
     Sol = require('../../Sol.js');
 
     override = {
-      paths: {
-        app: './test/mock/',
-        config: './test/mock/config',
-        views: './test/mock/views',
-        tmp: './test/mock/.tmp',
-        api: './test/mock/api',
-        controllers: './test/mock/controllers',
-        models: './test/mock/models'
-      }
+      appPath: './test/mock'
     };
-
     Sol.setup(override);
   });
 

@@ -2,7 +2,7 @@
 
 describe('Controllers', function() {
   var Controllers = require('../../lib/Controllers'),
-    mockControllerDir = './test/mock/controllers';
+    mockControllerDir = './test/mock/api/controllers';
 
   var mockSol;
 

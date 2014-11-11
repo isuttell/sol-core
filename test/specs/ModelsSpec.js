@@ -2,7 +2,7 @@
 
 describe('Models', function() {
   var Models = require('../../lib/Models'),
-    mockModelDir = './test/mock/models',
+    mockModelDir = './test/mock/api/models',
     models;
   var mockSol;
 

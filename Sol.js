@@ -42,40 +42,20 @@ Sol.prototype.setup = function(override) {
    *
    * @type    {this}
    */
-  var sol = this;
-
-  /**
-   * Define an empty object if it's not supplied
-   *
-   * @type {Object}
-   */
-  if (typeof override === 'undefined') {
-    override = {};
-  }
-
-  /**
-   * Pull the enviroment from the process and save it to the instance
-   * so we can access it throughout the pap
-   *
-   * @type    {String}
-   */
-  sol.env = override.env || process.env.NODE_ENV || 'production';
+  var sol = _.extend(this, override);
 
   /**
    * Load Application Absolute Paths
    * @type {Paths}
    */
-  sol.paths = override.paths || new Paths(sol);
+  sol.paths = new Paths(sol);
 
   /**
    * Extra Config from config directory
    *
    * @type    {Object}
    */
-  sol.config = _.defaults(
-    override.config || {},
-    Config.load(sol, sol.env)
-  );
+  sol.config = new Config(sol);
 
   /**
    * Setup Logger
@@ -88,14 +68,14 @@ Sol.prototype.setup = function(override) {
    *
    * @type    {Object}
    */
-  sol.controllers = override.controllers || new Controllers(sol);
+  sol.controllers = new Controllers(sol);
 
   /**
    * Load models directory
    *
    * @type    {Object}
    */
-  sol.models = override.models || new Models(sol);
+  sol.models = new Models(sol);
 
   /**
    * Return this for chaining

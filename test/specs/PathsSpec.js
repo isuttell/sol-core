@@ -7,7 +7,7 @@ describe('Paths', function ()
 
     beforeEach(function(){
         mockSol = new SolHelper();
-        mockSol.appPath = __dirname;
+        mockSol.appPath = __dirname + '../mock';
     });
 
     it('should be a function', function ()

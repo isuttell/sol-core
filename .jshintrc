@@ -9,5 +9,6 @@
   "unused"    : true,
   "es3"       : true,
   "quotmark"  : false,
-  "node"      : true
+  "node"      : true,
+  "maxcomplexity" : 10
 }
