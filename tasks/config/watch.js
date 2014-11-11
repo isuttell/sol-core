@@ -13,6 +13,17 @@
 module.exports = function(grunt) {
 
   grunt.config.set('watch', {
+    grunt: {
+
+      // Reload Grunt config when we change it
+      files: ['Gruntfile.js', 'tasks/**/*.js'],
+
+      options: {
+        reload: true
+      }
+
+    },
+
     sol: {
 
       // App files to watch:
