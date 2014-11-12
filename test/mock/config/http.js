@@ -19,6 +19,7 @@ module.exports = {
       'logger',
       'router',
       'static',
+      'mock',
       '404',
       '500'
     ],

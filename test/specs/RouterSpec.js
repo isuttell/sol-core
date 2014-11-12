@@ -4,6 +4,7 @@ describe('Router', function() {
   var Router = require('../../lib/Router');
 
   var mockRoutes,
+    mockPolicies,
     mockControllers,
     mockSol;
 
@@ -21,6 +22,14 @@ describe('Router', function() {
       'BAD /doesnotexist': 'FakeController.index'
     };
 
+    mockPolicies = {
+      'IndexController' : {
+        index: function (req, res) {
+          return true;
+        }
+      }
+    };
+
     mockControllers = {
       'IndexController': function() {
         return {
@@ -35,7 +44,8 @@ describe('Router', function() {
     };
 
     mockSol.config = {
-      routes: mockRoutes
+      routes: mockRoutes,
+      policies: mockPolicies
     };
 
     mockSol.controllers = mockControllers;
@@ -46,9 +56,11 @@ describe('Router', function() {
     expect(typeof Router).toBe('function');
   });
 
-  it('should return a function', function() {
+  it('should return an object with a list of routes and router function', function() {
     var router = new Router(mockSol);
-    expect(typeof router).toBe('function');
+    expect(typeof router).toBe('object');
+    expect(typeof router.routes).toBe('object');
+    expect(typeof router.router).toBe('function');
   });
 
   describe('Route', function() {

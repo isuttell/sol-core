@@ -30,7 +30,7 @@ module.exports = function(grunt) {
       files: ['lib/**/*', "Sol.js", "test/specs/**/*.js", "test/helpers/**/*.js", "test/mock/**/*.js"],
 
       // When app changes run tests
-      tasks: [ 'jasmine_node:sol', 'jshint:sol', 'jscs:sol'],
+      tasks: ['jshint:sol', 'jscs:sol', 'jasmine_node:sol'],
 
       options: {
         interrupt: true, // Interrupt any running tasks on save

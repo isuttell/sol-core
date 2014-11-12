@@ -15,6 +15,8 @@ var Models = require(__dirname + '/lib/Models');
 var Config = require(__dirname + '/lib/Config');
 var Http = require(__dirname + '/lib/Http');
 var Paths = require(__dirname + '/lib/Paths');
+var Router = require(__dirname + '/lib/Router');
+var Policies = require(__dirname + '/lib/Policies');
 var Log = require(__dirname + '/lib/Log');
 
 /**
@@ -81,6 +83,19 @@ Sol.prototype.setup = function(override) {
    */
   sol.models = new Models(sol);
 
+  /**
+   * Load policies
+   *
+   * @type    {Object}
+   */
+  sol.policies = new Policies(sol);
+
+  /**
+   * Load routes
+   *
+   * @type    {Routes}
+   */
+  sol.routes = new Router(sol);
   /**
    * Return this for chaining
    */

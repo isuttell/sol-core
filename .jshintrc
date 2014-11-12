@@ -11,5 +11,5 @@
   "quotmark"      : false,
   "node"          : true,
   "maxparams"     : 3,
-  "maxcomplexity" : 6
+  "maxcomplexity" : 7
 }

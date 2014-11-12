@@ -11,11 +11,14 @@
   "quotmark"  : false,
   "node"      : true,
   "globals"   : {
+    "jasmine"    : false,
+    "spyOn"      : false,
     "describe"   : false,
     "require"    : false,
     "beforeEach" : false,
     "expect"     : false,
     "it"         : false,
+    "xit"        : false,
     "SolHelper"  : false
   }
 }

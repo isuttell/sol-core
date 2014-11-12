@@ -32,7 +32,7 @@ describe('Config', function ()
     });
 
     it('should return only read files that end with \'.js\'', function(){
-        expect(configs.size()).toBe(7);
+        expect(configs.size()).toBe(8);
     });
 
     it('should ignore directories that do not exist', function(){
