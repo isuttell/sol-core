@@ -10,4 +10,4 @@ before_install:
   - npm update npm -g # For "^" dependency compatiblibty in NodeJS 0.8
 after_script:
   - NODE_ENV=test cat ./test/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
-  - cat ./tests/coverage/lcov/lcov.info | ./node_modules/codeclimate-test-reporter/bin/codeclimate.js
+  - cat ./test/coverage/lcov.info | ./node_modules/codeclimate-test-reporter/bin/codeclimate.js
