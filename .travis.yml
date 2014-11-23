@@ -1,10 +1,13 @@
 language: node_js
 node_js:
-  - 0.10
-  - 0.11
+  - "0.8"
+  - "0.10"
+  - "0.11"
 addons:
   code_climate:
     repo_token: 1a54d79c17d43fd0e69698e33925890eaa2dae3f985ab0cbe2cf042aa3a5034e
+before_install:
+  - npm update npm -g # For "^" dependency compatiblibty in NodeJS 0.8
 after_script:
   - NODE_ENV=test cat ./test/coverage/lcov.info | ./node_modules/coveralls/bin/coveralls.js
   - cat ./tests/coverage/lcov/lcov.info | ./node_modules/codeclimate-test-reporter/bin/codeclimate.js

@@ -14,6 +14,11 @@ describe('utility', function() {
       expect(typeof modules).toBe('object');
     });
 
+    it('should return an empty object if the directory is not found', function() {
+      var modules = utilities.loadModules('/fake-dir');
+      expect(modules).toEqual({});
+    });
+
     it('should return only read files that end with \'.js\'', function() {
       var module = utilities.loadModules(mockControllerDir),
         moduleLength = 0;
