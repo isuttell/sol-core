@@ -7,22 +7,64 @@
  */
 
 module.exports = function(grunt) {
+  'use strict';
 
-  // Load the include-all library in order to require all of our grunt
-  // configurations and task registrations dynamically.
-  var includeAll = require('include-all');
+  // Auto load grunt tasks
+  require('jit-grunt')(grunt);
 
   /**
    * Loads Grunt configuration modules from the specified
    * relative path. These modules should export a function
    * that, when run, should either load/configure or register
    * a Grunt task.
+   *
+   * @param   {String}   dir   Directory to load
    */
-  function loadTasks(relPath) {
-    return includeAll({
-      dirname: require('path').resolve(__dirname, relPath),
-      filter: /(.+)\.js$/
-    }) || {};
+  function loadTasks(dir) {
+    /**
+     * Resolve any relative paths
+     *
+     * @type    {String}
+     */
+    dir = require('path').resolve(dir);
+
+    /**
+     * Interal collection of modules loaded
+     *
+     * @type    {Object}
+     */
+    var modules = {};
+
+    /**
+     * Get a list of items in a directory. This is synchronous since we're
+     * only doing this once on application load
+     *
+     * @type    {Array}
+     */
+    var list = require('fs').readdirSync(dir);
+
+    /**
+     * Setup the Regex to filter out *.js files
+     *
+     * @type    {RegExp}
+     */
+    var jsFile = /.*\.js/;
+
+    // Cycle through each item in the directory
+    list.forEach(function(module) {
+      //Check to see if with have a match and if we split it apartment
+      module = module.match(jsFile);
+      if (module) {
+        // If we find a match try to load and save it. Otherwise log an error
+        try {
+          modules[module[0]] = require(dir + '/' + module[0]);
+        } catch (err) {
+          console.error('Unable to load ' + dir + '/' + module[0], err);
+        }
+      }
+    });
+
+    return modules;
   }
 
   /**
@@ -38,15 +80,8 @@ module.exports = function(grunt) {
   }
 
   // Load task functions
-  var taskConfigurations = loadTasks('./tasks/config'),
-    registerDefinitions = loadTasks('./tasks/register');
-
-  // (ensure that a default task exists)
-  if (!registerDefinitions.default) {
-    registerDefinitions.default = function(grunt) {
-      grunt.registerTask('default', []);
-    };
-  }
+  var taskConfigurations = loadTasks('./tasks/config');
+  var registerDefinitions = loadTasks('./tasks/register');
 
   // Run task functions to configure Grunt.
   invokeConfigFn(taskConfigurations);

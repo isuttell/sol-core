@@ -29,13 +29,11 @@ module.exports = function(grunt) {
       captureExceptions: true,
       jUnit: {
         report: true,
-        savePath: "./test/reports/",
+        savePath: './test/reports/',
         useDotNotation: true,
         consolidate: true
       }
     },
     sol: ['./test/']
   });
-
-  grunt.loadNpmTasks('grunt-jasmine-node-coverage');
 };
